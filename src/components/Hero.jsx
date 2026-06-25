@@ -62,7 +62,7 @@ export default function Hero() {
             fontSize: '.7rem', letterSpacing: '.34em', textTransform: 'uppercase',
             color: 'rgba(245,245,240,.42)',
           }}>
-            hai!, kenalin aku
+          Hi! Let me introduce myself
           </span>
         </div>
 
@@ -89,7 +89,7 @@ export default function Hero() {
           letterSpacing: '.06em',
           marginBottom: '2.4rem',
         }}>
-          <span style={{ opacity: .45, fontSize: '.78em', marginRight: '.4rem' }}>a.k.a.</span>
+         
           Full-Stack Software Developer
         </div>
 

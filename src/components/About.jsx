@@ -1,9 +1,9 @@
 import useReveal from './useReveal'
 
 const stats = [
-  { v: '3+', l: 'Years Experience' },
+  { v: '2+', l: 'Years Experience' },
   { v: '20+', l: 'Projects Built' },
-  { v: '10+', l: 'Happy Clients' },
+  { v: '5+', l: 'Happy Clients' },
   { v: '∞', l: 'Lines of Code' },
 ]
 
@@ -42,12 +42,17 @@ export default function About() {
             <h2 className="reveal" style={S.h2}>
               Crafting digital<br /><em>experiences</em> that matter
             </h2>
-            <p className="reveal" style={{ ...S.body, marginBottom: '1.1rem' }}>
-              I'm Sakshi Singh, a full-stack software developer passionate about building web apps that are technically robust and visually refined. I love turning complex problems into elegant solutions.
-            </p>
-            <p className="reveal" style={S.body}>
-              When I'm not coding, I'm exploring new technologies, contributing to open source, and pushing what the web can do.
-            </p>
+           <p className="reveal" style={{ ...S.body, marginBottom: '1.1rem' }}>
+  I'm Sakshi Singh, a full-stack software developer passionate about crafting digital experiences that combine functionality, performance, and elegant design. I thrive on solving complex challenges through clean and scalable code.
+</p>
+
+<p className="reveal" style={{ ...S.body, marginBottom: '1.1rem' }}>
+  Currently pursuing a Master of Computer Applications (MCA) at Jaypee Institute of Information Technology (JIIT), Noida, I continuously explore modern technologies and industry best practices to build impactful software solutions.
+</p>
+
+<p className="reveal" style={S.body}>
+  Beyond development, I enjoy exploring emerging technologies, contributing to collaborative projects, and pushing the boundaries of what can be achieved on the web.
+</p>
           </div>
 
           {/* Stats grid */}

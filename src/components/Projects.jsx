@@ -3,10 +3,12 @@ import useReveal from './useReveal'
 import { S } from './About'
 
 const projects = [
-  { id: '01', title: 'DevConnect', desc: 'Full-stack social platform for developers to share projects, collaborate, and grow — with real-time notifications and activity feeds.', tech: ['React', 'Node.js', 'MongoDB', 'Socket.io'], year: '2024', type: 'Full-Stack App' },
-  { id: '02', title: 'ShopNest', desc: 'Modern e-commerce platform with product management, cart, Stripe payments, and an analytics admin dashboard.', tech: ['React', 'Express', 'MongoDB', 'Stripe'], year: '2024', type: 'E-Commerce' },
-  { id: '03', title: 'TaskFlow', desc: 'Drag-and-drop Kanban project management tool with team support, deadlines, and real-time collaboration.', tech: ['React', 'Node.js', 'PostgreSQL', 'WS'], year: '2023', type: 'Productivity' },
-  { id: '04', title: 'AuraAI', desc: 'AI-powered writing assistant built on the OpenAI API — helps generate content, refine writing, and beat creative blocks.', tech: ['React', 'Express', 'OpenAI', 'Redis'], year: '2024', type: 'AI Application' },
+   { id: '01', title: 'Networq Nexus', desc: 'Network Nexus is a professional networking platform enabling users to build profiles, connect with professionals, share posts, exchange messages, and discover career opportunities in a secure and interactive environment and many more.', tech: ['React', 'Node+Express', 'MongoDB', 'JWT+bcrypt', 'Socket.io', 'Shadcn UI', ], status: 'Running project', type: 'Full Stack Application' },
+   { id: '02', title: 'ConvoX', desc: 'A end to end chat app project of network based on tcp.', tech: ['Python', 'Socket.io', 'Streamlit', 'Wireshark'], status: '2026', type: 'Network based app' },
+  { id: '03', title: 'CorpSync', desc: 'A corporate resource prediction platform based on there performence.', tech: ['Python', 'Scikit-learn', 'Flask', 'Bootstrap'], status: '2025', type: 'AI-Powered Enterprise Management System' },
+ 
+  { id: '04', title: 'SplitUs', desc: 'Full-stack expense-sharing platform that helps friends, roommates, and groups split bills, track balances, and settle expenses effortlessly.', tech: ['React', 'Node.js', 'MySQL', 'JWT+bcrypt'], status: '2025', type: 'Full-Stack App' },
+ 
 ]
 
 function Card({ p, i }) {
@@ -42,7 +44,7 @@ function Card({ p, i }) {
 
         {/* Right */}
         <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-end', gap: '.9rem', minWidth: '180px' }}>
-          <span style={{ fontFamily: 'Inter, sans-serif', fontWeight: 300, fontSize: '.65rem', color: 'rgba(245,245,240,.22)', letterSpacing: '.15em' }}>{p.year}</span>
+          <span style={{ fontFamily: 'Inter, sans-serif', fontWeight: 300, fontSize: '.65rem', color: 'rgba(245,245,240,.22)', letterSpacing: '.15em' }}>{p.status}</span>
           <div style={{ display: 'flex', flexWrap: 'wrap', gap: '.4rem', justifyContent: 'flex-end' }}>
             {p.tech.map(t => (
               <span key={t} style={{ padding: '.25rem .65rem', border: '1px solid rgba(245,245,240,.11)', fontFamily: 'Inter, sans-serif', fontSize: '.6rem', letterSpacing: '.1em', color: 'rgba(245,245,240,.42)', fontWeight: 300 }}>{t}</span>
