@@ -1,0 +1,80 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  background: #111111;
+  color: #F5F5F0;
+  font-family: 'Inter', sans-serif;
+  overflow-x: hidden;
+  cursor: none;
+}
+
+::selection { background: rgba(245,245,240,0.15); }
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 2px; }
+::-webkit-scrollbar-track { background: #111111; }
+::-webkit-scrollbar-thumb { background: rgba(245,245,240,0.2); }
+
+/* Custom cursor */
+.cur-dot {
+  width: 7px; height: 7px;
+  background: #F5F5F0;
+  border-radius: 50%;
+  position: fixed;
+  pointer-events: none;
+  z-index: 9999;
+  transform: translate(-50%, -50%);
+}
+.cur-ring {
+  width: 34px; height: 34px;
+  border: 1px solid rgba(245,245,240,0.4);
+  border-radius: 50%;
+  position: fixed;
+  pointer-events: none;
+  z-index: 9998;
+  transform: translate(-50%, -50%);
+  transition: width .2s, height .2s, border-color .2s, background .2s;
+}
+.cur-ring.big {
+  width: 52px; height: 52px;
+  border-color: rgba(245,245,240,0.8);
+  background: rgba(245,245,240,0.04);
+}
+
+/* Noise */
+.noise {
+  position: fixed; inset: 0;
+  pointer-events: none; z-index: 0;
+  opacity: 0.025;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+/* Section reveal */
+.reveal {
+  opacity: 0;
+  transform: translateY(32px);
+  transition: opacity .85s ease, transform .85s ease;
+}
+.reveal.show { opacity: 1; transform: translateY(0); }
+
+/* Underline hover */
+.ul-hover {
+  position: relative;
+}
+.ul-hover::after {
+  content: '';
+  position: absolute; bottom: -1px; left: 0;
+  width: 0; height: 1px;
+  background: #F5F5F0;
+  transition: width .35s ease;
+}
+.ul-hover:hover::after { width: 100%; }
+
+/* Hairline */
+.line { height: 1px; background: rgba(245,245,240,0.1); }
