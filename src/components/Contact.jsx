@@ -1,13 +1,8 @@
 import { useState } from 'react'
-import emailjs from '@emailjs/browser'
 import useReveal from './useReveal'
 import { S } from './About'
 
-// ── Fill these in from emailjs.com ──────────────────────────────────────────
-const SERVICE_ID  = 'YOUR_SERVICE_ID'
-const TEMPLATE_ID = 'YOUR_TEMPLATE_ID'
-const PUBLIC_KEY  = 'YOUR_PUBLIC_KEY'
-// ────────────────────────────────────────────────────────────────────────────
+const ACCESS_KEY = 'ee5a0d2f-9929-4a37-9305-8886524b9737'
 
 const inp = {
   width: '100%', background: 'transparent',
@@ -31,17 +26,22 @@ export default function Contact() {
 
   const change = e => setForm({ ...form, [e.target.name]: e.target.value })
 
-  const send = async () => {
+  const send = async (e) => {
+    e.preventDefault()
     if (!form.name || !form.email || !form.message) return
     setSt('loading')
+
+    const formData = new FormData()
+    formData.append('access_key', ACCESS_KEY)
+    formData.append('name', form.name)
+    formData.append('email', form.email)
+    formData.append('message', form.message)
+
     try {
-      await emailjs.send(SERVICE_ID, TEMPLATE_ID, {
-        from_name: form.name,
-        from_email: form.email,
-        message: form.message,
-      }, PUBLIC_KEY)
-      setSt('ok')
-      setForm({ name: '', email: '', message: '' })
+      const res = await fetch('https://api.web3forms.com/submit', { method: 'POST', body: formData })
+      const data = await res.json()
+      setSt(data.success ? 'ok' : 'err')
+      if (data.success) setForm({ name: '', email: '', message: '' })
     } catch {
       setSt('err')
     }
@@ -68,35 +68,39 @@ export default function Contact() {
 
             <div className="reveal">
               {[
-                { l: 'Email',    v: 'sakshi@example.com' },
-                { l: 'LinkedIn', v: 'linkedin.com/in/sakshisingh' },
-                { l: 'GitHub',   v: 'github.com/sakshisingh' },
-              ].map(({ l, v }) => (
+                { l: 'Email',    v: 'its.sakshii.me@gmail.com',           href: 'mailto:its.sakshii.me@gmail.com' },
+                { l: 'LinkedIn', v: 'linkedin.com/in/sakshi-singh-3010sa', href: 'https://www.linkedin.com/in/sakshi-singh-3010sa/' },
+                { l: 'GitHub',   v: 'github.com/itsSakshii',              href: 'https://github.com/itsSakshii' },
+              ].map(({ l, v, href }) => (
                 <div key={l} style={{ display: 'flex', gap: '1.2rem', marginBottom: '.9rem', alignItems: 'baseline' }}>
                   <span style={{ fontFamily: 'Inter, sans-serif', fontSize: '.62rem', letterSpacing: '.22em', textTransform: 'uppercase', color: 'rgba(245,245,240,.28)', fontWeight: 300, minWidth: '64px' }}>{l}</span>
-                  <span style={{ fontFamily: 'Inter, sans-serif', fontSize: '.86rem', color: 'rgba(245,245,240,.55)', fontWeight: 300 }}>{v}</span>
+                  <a href={href} target={href.startsWith('mailto') ? '_self' : '_blank'} rel="noreferrer"
+                    style={{ fontFamily: 'Inter, sans-serif', fontSize: '.86rem', color: 'rgba(245,245,240,.55)', fontWeight: 300, textDecoration: 'none', transition: 'color .2s' }}
+                    onMouseEnter={e => e.currentTarget.style.color = '#F5F5F0'}
+                    onMouseLeave={e => e.currentTarget.style.color = 'rgba(245,245,240,.55)'}
+                  >{v}</a>
                 </div>
               ))}
             </div>
           </div>
 
           {/* Form */}
-          <div className="reveal" style={{ display: 'flex', flexDirection: 'column', gap: '1.8rem' }}>
+          <form className="reveal" onSubmit={send} style={{ display: 'flex', flexDirection: 'column', gap: '1.8rem' }}>
             <div>
               <label style={lbl}>Name</label>
-              <input name="name" value={form.name} onChange={change} onFocus={focus} onBlur={blur} placeholder="Your name" style={inp} />
+              <input name="name" value={form.name} onChange={change} onFocus={focus} onBlur={blur} placeholder="Your name" style={inp} required />
             </div>
             <div>
               <label style={lbl}>Email</label>
-              <input name="email" type="email" value={form.email} onChange={change} onFocus={focus} onBlur={blur} placeholder="your@email.com" style={inp} />
+              <input name="email" type="email" value={form.email} onChange={change} onFocus={focus} onBlur={blur} placeholder="your@email.com" style={inp} required />
             </div>
             <div>
               <label style={lbl}>Message</label>
-              <textarea name="message" value={form.message} onChange={change} onFocus={focus} onBlur={blur} placeholder="Tell me about your project..." rows={4} style={{ ...inp, resize: 'none' }} />
+              <textarea name="message" value={form.message} onChange={change} onFocus={focus} onBlur={blur} placeholder="Tell me about your project..." rows={4} style={{ ...inp, resize: 'none' }} required />
             </div>
 
             <button
-              onClick={send}
+              type="submit"
               disabled={st === 'loading'}
               data-h
               style={{
@@ -114,11 +118,8 @@ export default function Contact() {
             >
               {st === 'loading' ? 'Sending...' : st === 'ok' ? 'Sent ✓' : st === 'err' ? 'Try Again' : 'Send Message'}
             </button>
+          </form>
 
-            <p style={{ fontFamily: 'Inter, sans-serif', fontSize: '.68rem', color: 'rgba(245,245,240,.3)', fontWeight: 300, lineHeight: 1.7 }}>
-              ⓘ Replace <code style={{ color: 'rgba(245,245,240,.5)' }}>SERVICE_ID</code>, <code style={{ color: 'rgba(245,245,240,.5)' }}>TEMPLATE_ID</code>, and <code style={{ color: 'rgba(245,245,240,.5)' }}>PUBLIC_KEY</code> in Contact.jsx with your <a href="https://emailjs.com" target="_blank" rel="noreferrer" style={{ color: 'rgba(245,245,240,.6)', textDecoration: 'underline' }}>EmailJS</a> credentials.
-            </p>
-          </div>
         </div>
       </div>
     </section>

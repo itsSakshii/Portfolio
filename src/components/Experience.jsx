@@ -5,67 +5,35 @@ import { S } from './About'
 const experiences = [
   {
     id: '01',
-    role: 'Senior Frontend Developer',
-    company: 'TechCorp Solutions',
+    role: 'MERN Stack Developer',
+    company: 'Galas IT Solutions Pvt. Ltd.',
     type: 'Full-time',
-    period: 'Jan 2024 — Present',
-    duration: '1 yr',
+    period: 'Sep 2024 — Jul 2025 · 11 mos',
+    duration: '11 mos',
     location: 'Remote',
-    desc: 'Leading the frontend architecture for a SaaS platform serving 50k+ users. Migrated legacy codebase to React + TypeScript, reducing bundle size by 42% and improving load time significantly.',
+    desc: 'Serving as a MERN Stack Developer working across multiple tech stacks. Leading frontend development using React.js, SASS, and GSAP for animated, high-performance projects, while also contributing to backend integration with MongoDB and Express.js.',
     points: [
-      'Architected reusable component library used across 3 product teams',
-      'Implemented CI/CD pipelines with GitHub Actions and automated testing',
-      'Mentored 2 junior developers through code reviews and pair programming',
+      'Built and animated frontend interfaces using React.js, SASS, and GSAP for complex UI structures',
+      'Worked on a full-stack application with Material UI on the frontend and Hapi.js on the backend',
+      'Integrated MongoDB and Express.js to deliver end-to-end feature development across projects',
     ],
-    tech: ['React', 'TypeScript', 'Tailwind CSS', 'Vite', 'Jest'],
+    tech: ['React.js', 'GSAP', 'SASS', 'Material UI', 'TanStack Query', 'MongoDB', 'Express.js', 'Hapi.js', 'JavaScript'],
   },
   {
     id: '02',
-    role: 'Full-Stack Developer',
-    company: 'Startup Nexus',
-    type: 'Full-time',
-    period: 'Jun 2022 — Dec 2023',
-    duration: '1.5 yrs',
-    location: 'Hybrid',
-    desc: 'Built and shipped multiple product features end-to-end for a B2B SaaS startup. Owned the entire stack from database schema design to pixel-perfect UI delivery.',
-    points: [
-      'Designed and built REST APIs consumed by web and mobile clients',
-      'Integrated Stripe billing, reducing churn by 18% with improved UX flows',
-      'Reduced API response time by 60% through query optimisation and caching',
-    ],
-    tech: ['Node.js', 'Express', 'MongoDB', 'React', 'Redis'],
-  },
-  {
-    id: '03',
-    role: 'Frontend Developer Intern',
-    company: 'PixelForge Agency',
+    role: 'Frontend Web Developer',
+    company: 'Galas IT Solutions Pvt. Ltd.',
     type: 'Internship',
-    period: 'Jan 2022 — May 2022',
-    duration: '5 mos',
-    location: 'On-site',
-    desc: 'Worked with a design-forward agency delivering marketing websites and web apps for clients across fintech and e-commerce sectors.',
-    points: [
-      'Delivered 6 client websites from Figma designs to production',
-      'Improved Lighthouse performance score from 54 → 92 on flagship client site',
-      'Collaborated closely with designers to implement pixel-perfect animations',
-    ],
-    tech: ['React', 'JavaScript', 'GSAP', 'Sass', 'Figma'],
-  },
-  {
-    id: '04',
-    role: 'Open Source Contributor',
-    company: 'Various Projects',
-    type: 'Open Source',
-    period: '2021 — Present',
-    duration: 'Ongoing',
+    period: 'Jun 2024 — Aug 2024 · 3 mos',
+    duration: '3 mos',
     location: 'Remote',
-    desc: 'Active contributor to open-source projects on GitHub. Focused on developer tooling, React ecosystems, and documentation improvements.',
+    desc: 'Contributed to the official company website during the internship, gaining hands-on experience in frontend development. Worked with advanced animation libraries alongside core web technologies, while also building team collaboration and real-world development skills.',
     points: [
-      'Merged 12+ PRs to popular React utility libraries',
-      'Authored and maintain 3 personal npm packages with 200+ weekly downloads',
-      'Write technical articles on dev.to covering React patterns and performance',
+      'Contributed directly to the official Galas IT Solutions website as the primary frontend task',
+      'Worked with React.js and GSAP animations — a challenging and skill-doubling experience',
+      'Strengthened team collaboration and real-life project delivery skills across the internship',
     ],
-    tech: ['React', 'TypeScript', 'Node.js', 'GitHub Actions'],
+    tech: ['React.js', 'GSAP', 'JavaScript', 'HTML5 / CSS3'],
   },
 ]
 
@@ -139,7 +107,7 @@ export default function Experience() {
                           fontSize: 'clamp(1.3rem,2.6vw,2rem)',
                           lineHeight: 1.1, letterSpacing: '-.01em',
                           color: '#F5F5F0',
-                          marginBottom: '.25rem',
+                          marginBottom: '1rem',
                         }}>
                           {exp.role}
                         </div>
@@ -194,7 +162,7 @@ export default function Experience() {
                   maxHeight: isOpen ? '600px' : '0',
                   transition: 'max-height .55s cubic-bezier(.4,0,.2,1)',
                 }}>
-                  <div style={{
+                  <div className="exp-body" style={{
                     padding: '0 0 2.5rem 2.8rem',
                     borderLeft: '1px solid rgba(245,245,240,.08)',
                     marginLeft: '1rem',
@@ -259,7 +227,7 @@ export default function Experience() {
         {/* Resume CTA */}
         <div className="reveal" style={{ marginTop: '3.5rem', display: 'flex', alignItems: 'center', gap: '2rem', flexWrap: 'wrap' }}>
           <a
-            href="/resume.pdf"
+            href="https://drive.google.com/uc?export=download&id=1KpRT16D9c3f8UZc0_HIgw-pNIj8bX1Xk"
             target="_blank"
             rel="noreferrer"
             data-h
@@ -280,7 +248,7 @@ export default function Experience() {
             Download Resume
           </a>
           <span style={{ fontFamily: 'Inter, sans-serif', fontWeight: 300, fontSize: '.72rem', letterSpacing: '.1em', color: 'rgba(245,245,240,.3)' }}>
-            PDF · Updated 2024
+            PDF ·
           </span>
         </div>
       </div>

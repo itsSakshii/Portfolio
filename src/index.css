@@ -78,3 +78,34 @@ body {
 
 /* Hairline */
 .line { height: 1px; background: rgba(245,245,240,0.1); }
+
+/* ── Cursor glow breath ─────────────────────────────────────────────────── */
+@keyframes glow-breath {
+  0%, 100% { opacity: 0.65; transform: translate(-50%,-50%) scale(1);    }
+  50%       { opacity: 1;   transform: translate(-50%,-50%) scale(1.18); }
+}
+
+/* ── Mobile ─────────────────────────────────────────────────────────────── */
+@media (max-width: 767px) {
+  /* Restore real cursor on touch devices */
+  body { cursor: auto; }
+  .cur-dot, .cur-ring { display: none; }
+  button, a { cursor: pointer !important; }
+
+  /* Experience expand body — reduce left indent on small screens */
+  .exp-body {
+    padding-left: 1rem !important;
+    margin-left: 0 !important;
+    border-left: none !important;
+  }
+
+  /* Hero — hide scroll indicator text on very small screens */
+  .hero-scroll { display: none; }
+
+  /* Projects right column — left-align tech tags on mobile */
+  .proj-right {
+    align-items: flex-start !important;
+    min-width: unset !important;
+    width: 100%;
+  }
+}

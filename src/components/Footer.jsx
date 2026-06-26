@@ -5,7 +5,7 @@ export default function Footer() {
         <div className="line" style={{ marginBottom: '1.8rem' }} />
         <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '1rem' }}>
           <div style={{ fontFamily: "'Dancing Script', cursive", fontSize: '1.1rem', color: 'rgba(245,245,240,.45)' }}>
-            Sakshi Singh
+            
           </div>
           <div style={{ fontFamily: 'Inter, sans-serif', fontSize: '.62rem', letterSpacing: '.2em', textTransform: 'uppercase', color: 'rgba(245,245,240,.22)' }}>
             © {new Date().getFullYear()} — Software Developer

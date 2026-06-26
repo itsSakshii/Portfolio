@@ -2,10 +2,11 @@ import useReveal from './useReveal'
 import { S } from './About'
 
 const groups = [
-  { cat: 'Frontend',       skills: ['React.js', 'Next.js', 'Tailwind CSS', 'TypeScript', 'JavaScript ES6+', 'HTML5 / CSS3'] },
-  { cat: 'Backend',        skills: ['Node.js', 'Express.js', 'REST APIs', 'GraphQL', 'JWT Auth', 'Socket.io'] },
-  { cat: 'Database',       skills: ['MongoDB', 'Mongoose', 'PostgreSQL', 'Redis', 'Firebase', 'Prisma ORM'] },
-  { cat: 'Tools & DevOps', skills: ['Git / GitHub', 'Docker', 'AWS (EC2, S3)', 'Vercel', 'Postman', 'Linux CLI'] },
+  { cat: 'Frontend',       skills: ['React.js', 'Redux Toolkit', 'Tailwind CSS', 'TypeScript', 'JavaScript ES6+', 'HTML5 / CSS3', 'Tanstack Query', 'Shadcn UI', 'Streamlit', 'Material UI'] },
+  { cat: 'Backend',        skills: ['Node.js', 'Express.js', 'REST APIs', 'Python', 'JWT Auth', 'Socket.io', 'WebSockets','bcrypt', 'Flask', 'MySQL2/promise'] },
+  { cat: 'Database',       skills: ['MongoDB', 'Mongoose', 'MySQL','sqlite3'] },
+  { cat: 'Tools & Deployments', skills: ['Git / GitHub', 'AWS (EC2, S3)', 'Vercel', 'Postman','Render'] },
+  { cat: 'ML Models', skills: ['Pandas', 'NumPy', 'Matplotlib', 'Seaborn', 'Scikit-learn','Linear Regression' ,'Decision Tree'] },
 ]
 
 export default function Skills() {
