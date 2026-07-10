@@ -15,7 +15,7 @@ const PALETTE = {
 
 const projects = [
   {
-    id: '01', title: 'Networq Nexus', type: 'Full Stack Application', status: 'In Progress',
+    id: '01', title: 'Networq Nexus', type: 'Full Stack Application', status: 'july 2026',
     desc: 'Network Nexus is a professional networking platform enabling users to build profiles, connect with professionals, share posts, exchange messages, and discover career opportunities in a secure and interactive environment.',
     tech: ['React', 'Node+Express', 'MongoDB', 'JWT+bcrypt', 'Socket.io', 'Shadcn UI'],
      link: "https://networq-frontend.vercel.app/"  ,   
