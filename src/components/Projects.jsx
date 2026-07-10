@@ -20,7 +20,7 @@ const projects = [
     tech: ['React', 'Node+Express', 'MongoDB', 'JWT+bcrypt', 'Socket.io', 'Shadcn UI'],
      link: "https://networq-frontend.vercel.app/"  ,   
     image: imgNetworq,
-    ready: false,
+    ready: true,
   },
   {
     id: '02', title: 'ConvoX', type: 'Network based app', status: '2026',
